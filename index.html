@@ -17,9 +17,6 @@
   <script src="three.min.js"></script>
   <script src="DeviceOrientationControls.js"></script>
   <script src="OrbitControls.js"></script>
-  <script src="main.js"></script>
-
-
 
 
   <script>
@@ -74,8 +71,6 @@
 
   //control
 
-
-
   if(sp){
     var gcontrols = new THREE.DeviceOrientationControls(camera, renderer.domElement);
   }else{
@@ -97,14 +92,10 @@
   }
   render();
   function onWindowResize() {
-
 		camera.aspect = window.innerWidth / window.innerHeight;
 		camera.updateProjectionMatrix();
-
 		renderer.setSize( window.innerWidth, window.innerHeight );
-
 	}
-
 
 })();
 
