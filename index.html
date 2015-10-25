@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <title>Panorama Example</title>
+    <title>Gyro Panorama Example</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <style>
@@ -74,18 +74,24 @@
 
   //control
 
-  var controls = new THREE.OrbitControls(camera, renderer.domElement);
+
 
   if(sp){
     var gcontrols = new THREE.DeviceOrientationControls(camera, renderer.domElement);
+  }else{
+    var controls = new THREE.OrbitControls(camera, renderer.domElement);
   }
 
   function render(){
     requestAnimationFrame(render);
     renderer.render(scene,camera);
-    controls.update();
-    gcontrols.connect();
-    gcontrols.update();
+
+    if(sp){
+      gcontrols.connect();
+      gcontrols.update();
+    }else{
+      controls.update();
+    }
   }
   render();
 
