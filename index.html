@@ -44,7 +44,6 @@
   // 画像をテクスチャとして読み込み
 var texture = new THREE.ImageUtils.loadTexture("test.jpg");
 texture.minFilter = THREE.LinearFilter;
-texture.flipY = false;
 
 	var material = new THREE.MeshBasicMaterial( {
 	   map: texture
