@@ -38,13 +38,13 @@
 
   //mesh
 
-  var geometry = new THREE.SphereGeometry( 5, 60, 40 );
-	geometry.scale( - 1, 1, 1 );
+  var geometry = new THREE.SphereGeometry( 1, 100, 100 );
+	
 
   // 画像をテクスチャとして読み込み
 var texture = new THREE.ImageUtils.loadTexture("test.jpg");
 texture.minFilter = THREE.LinearFilter;
-//texture.flipY = false;
+texture.flipY = false;
 
 	var material = new THREE.MeshBasicMaterial( {
     side: THREE.DoubleSide,
@@ -53,6 +53,7 @@ texture.minFilter = THREE.LinearFilter;
 	} );
 
 	sphere = new THREE.Mesh( geometry, material );
+  sphere.rotation.x += Math.PI;
 
 	scene.add( sphere );
 
