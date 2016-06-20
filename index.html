@@ -41,8 +41,13 @@
   var geometry = new THREE.SphereGeometry( 5, 60, 40 );
 	geometry.scale( - 1, 1, 1 );
 
+  // 画像をテクスチャとして読み込み
+var texture = new THREE.ImageUtils.loadTexture("test.jpg");
+texture.minFilter = THREE.LinearFilter;
+texture.flipY = false;
+
 	var material = new THREE.MeshBasicMaterial( {
-	   map: THREE.ImageUtils.loadTexture( 'test.jpg' )
+	   map: texture
 	} );
 
 	sphere = new THREE.Mesh( geometry, material );
