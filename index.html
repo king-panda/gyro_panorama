@@ -44,8 +44,12 @@
   // 画像をテクスチャとして読み込み
 var texture = new THREE.ImageUtils.loadTexture("test.jpg");
 texture.minFilter = THREE.LinearFilter;
+texture.minFilter = THREE.NearestMipMapLinearFilter
+texture.minFilter = THREE.NearestMipMapNearestFilter
 
 	var material = new THREE.MeshBasicMaterial( {
+    side: THREE.DoubleSide,
+   　color: 0xFFFFFF, specular: 0xcccccc, shininess:50, ambient: 0xffffff,
 	   map: texture
 	} );
 
