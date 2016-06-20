@@ -45,6 +45,11 @@
 	   map: THREE.ImageUtils.loadTexture( 'test.jpg' )
 	} );
 
+  material.wrapS = THREE.RepeatWrapping;
+  material.wrapT = THREE.RepeatWrapping;
+  material.repeat.set( 4, 4 );
+
+
 	sphere = new THREE.Mesh( geometry, material );
 
 	scene.add( sphere );
