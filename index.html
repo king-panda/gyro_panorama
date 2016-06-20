@@ -44,8 +44,7 @@
   // 画像をテクスチャとして読み込み
 var texture = new THREE.ImageUtils.loadTexture("test.jpg");
 texture.minFilter = THREE.LinearFilter;
-texture.minFilter = THREE.NearestMipMapLinearFilter
-texture.minFilter = THREE.NearestMipMapNearestFilter
+texture.flipY = false;
 
 	var material = new THREE.MeshBasicMaterial( {
     side: THREE.DoubleSide,
@@ -71,7 +70,7 @@ texture.minFilter = THREE.NearestMipMapNearestFilter
 
   //render
 
-  var renderer = new THREE.WebGLRenderer({antialias: true});
+  var renderer = new THREE.WebGLRenderer({});
   renderer.setSize(width,height);
   renderer.setClearColor({color: 0x000000});
   document.getElementById('stage').appendChild(renderer.domElement);
